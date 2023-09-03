@@ -1,0 +1,58 @@
+body {
+    background-color: #f0e6dc;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar.navbar-expand-lg { 
+background-color:#6b7fdf;
+  height: auto;
+width: 100%;
+}
+.nav-link{
+  color: white;
+}
+.nav-link.dropdown-toggle {
+color: black;
+font-weight: bold;
+margin-right: 0 auto;
+}
+.navbar-toggler{
+  border: 1px solid white;
+  color: white;
+}
+
+.content {
+  padding: 1vh;
+  text-align: center;
+  font-family: 'Tinos', serif;
+  font-size: 1.6vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  justify-content: center;
+}
+
+.praxis {
+  width: 20%;
+  height: auto;
+  justify-content: center;
+  padding-top: 2vh;
+}
+
+.gras {
+  width: 20%;
+  height: auto;
+  justify-content: center;
+  padding-top: 2vh;
+}
+
+.text {
+  padding-left: 2vh;
+  max-width: 75vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+}
