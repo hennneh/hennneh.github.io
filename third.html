@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Happy Valentines Day Hannah</title>
+
+<style>
+:root{
+  --pink: #ff4d87;
+  --rose: #ff7aa2;
+  --red: #ff2d55;
+  --bg1: #fff6f8;
+  --bg2: #ffeef4;
+  --text-dark: #1a1a1a;
+  --muted: #6b6b6b;
+  --max-width: 720px;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--text-dark);
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+  overflow:hidden;
+}
+
+/* Main container */
+.stage{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(6px);
+  border-radius:22px;
+  padding:32px 20px;
+  box-shadow:0 12px 40px rgba(255,45,85,0.15);
+}
+
+/* Headline */
+h1{
+  margin:0;
+  font-weight:700;
+  line-height:1.05;
+  font-size:clamp(30px,9vw,48px);
+  color:var(--red);
+  letter-spacing:-0.02em;
+  text-shadow:0 4px 18px rgba(255,45,85,0.15);
+  animation:softPulse 3.5s ease-in-out infinite;
+}
+
+.name{
+  display:block;
+  color:var(--pink);
+}
+
+.top-text{
+  margin-top:12px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+.bottom-text{
+  margin-top:18px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+/* Square image container */
+.image-wrapper{
+  margin-top:18px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+/* Make image square and responsive */
+.image-wrapper img{
+  width:100%;
+  max-width:260px;        /* keeps it nice on larger screens */
+  aspect-ratio:1 / 1;     /* forces square */
+  object-fit:cover;       /* crops nicely */
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(255,45,85,0.18);
+}
+
+/* Subtext */
+p{
+  margin-top:14px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+/* Gentle pulse */
+@keyframes softPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.02)}
+  100%{transform:scale(1)}
+}
+
+.valentine-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 26px;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--pink),var(--red));
+  color:white;
+  font-weight:600;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:0 8px 22px rgba(255,45,85,0.25);
+  transition:all 0.25s ease;
+}
+
+.valentine-btn:active{
+  transform:scale(0.96);
+  box-shadow:0 4px 14px rgba(255,45,85,0.2);
+}
+
+
+/* ------------------------
+   Falling PNG Hearts
+-------------------------*/
+
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.heart{
+  position:absolute;
+  top:-10vh;
+  width:22px;
+  height:22px;
+  background-image:url("images/heart.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:0.9;
+  will-change:transform,opacity;
+}
+
+/* Animation */
+@keyframes floatDown{
+  0%{
+    transform:translateY(-10vh) rotate(0deg) scale(0.8);
+    opacity:0;
+  }
+  10%{opacity:1}
+  50%{
+    transform:translateY(45vh) rotate(120deg) scale(1);
+  }
+  100%{
+    transform:translateY(110vh) rotate(240deg) scale(0.9);
+    opacity:0;
+  }
+}
+
+/* Individual positioning & variation */
+.heart:nth-child(1){left:5vw; animation:floatDown 7s linear 0s infinite;}
+.heart:nth-child(2){left:18vw; animation:floatDown 6.5s linear 1s infinite;}
+.heart:nth-child(3){left:30vw; animation:floatDown 8s linear 0.5s infinite;}
+.heart:nth-child(4){left:45vw; animation:floatDown 7.2s linear 1.5s infinite;}
+.heart:nth-child(5){left:60vw; animation:floatDown 6.8s linear 0.2s infinite;}
+.heart:nth-child(6){left:75vw; animation:floatDown 8.5s linear 1.2s infinite;}
+.heart:nth-child(7){left:88vw; animation:floatDown 7.8s linear 0.7s infinite;}
+.heart:nth-child(8){left:38vw; animation:floatDown 9s linear 2s infinite;}
+.heart:nth-child(9){left:70vw; animation:floatDown 6.9s linear 0.3s infinite;}
+.heart:nth-child(10){left:12vw; animation:floatDown 8.2s linear 1.8s infinite;}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .heart{animation:none; opacity:0.4;}
+  h1{animation:none;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Falling Hearts Layer -->
+<div class="hearts" aria-hidden="true">
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+</div>
+
+<main class="stage">
+  <section class="card">
+    <p class="top-text">
+      ... Zeit in Japan...
+    </p>
+
+    <div class="image-wrapper">
+      <img src="images/japan.gif" alt="third">
+    </div>
+
+    <p class="bottom-text">
+      ... bevor du...
+    </p>
+  </section>
+  <a href="fourth.html" class="valentine-btn">
+    Drück mich!
+  </a>
+</main>
+
+</body>
+</html>
